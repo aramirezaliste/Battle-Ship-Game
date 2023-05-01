@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 20px;
     flex-direction: column;
 }
 
@@ -10,18 +10,33 @@
     width: 100%;
 }
 
+.tituloDos{
+    display: flex;
+    justify-content: space-between;
+}
+
+#usuario{
+    margin-right: 400px;
+    margin-left: 70px;
+}
+
+.boards {
+    display: flex;
+}
+
 .tablero {
     display: flex;
     flex-wrap: wrap;
-    width: 950px;
+    width: 475px;
     align-items: center;
     justify-content: center;
-    height: 950px;
+    height: 475px;
+    margin: 2rem;
 }
 
 .esquina {
-    height: 50px;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     background-color: white;
 }
 
@@ -38,19 +53,19 @@
 }
 
 .cabezeraColumna {
-    height: 50px;
-    width: 100px;
+    height: 25px;
+    width: 50px;
 }
 
 .cabezeraFila {
-    height: 100px;
-    width: 50px;
+    height: 50px;
+    width: 25px;
 }
 
 .cuadrado {
     background-color: rgba(234,234,234,255);
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     box-sizing: border-box;
     border: rgba(221,221,221,255) 1px solid;
     cursor: pointer ;

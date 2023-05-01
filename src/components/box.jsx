@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Box = ({ valor, index, row, shoot }) => {
+export const Box = ({ valor, index, row, shoot, board }) => {
 
     function cambioColor() {
         if (valor === 1) {
@@ -11,15 +11,10 @@ export const Box = ({ valor, index, row, shoot }) => {
             return 'cuadrado disparo'
         } else if (valor === 3) {
             return 'cuadrado perdido'
-        } else if (valor === 4) {
-            return 'cuadrado verNaves'
-        } else {
-            return 'cuadrado disparo verNaves'
         }
     }
 
-
     return (
-        <div className={cambioColor()} onClick={() => { shoot(valor, index, row) }}> </div>
+        <div className={cambioColor()} onClick={() => { shoot(valor, index, row, board) }}> </div>
     )
 }
