@@ -1,7 +1,9 @@
 import React from 'react'
 
+//Renderizado de cada caja que se actualizara al hacer click sobre el
 export const Box = ({ valor, index, row, shoot, board }) => {
 
+    //Funcion que modificara el className dependiendo del valor del board.js
     function cambioColor() {
         if (valor === 1) {
             return 'cuadrado'
