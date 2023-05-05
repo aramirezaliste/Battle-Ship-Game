@@ -16,4 +16,5 @@ Se utilizo como parte principal del proyecto ReactJS por ende Javascript y HTML,
 Para darle el estilo a los tableros se utilizo CSS, con colores simples pero llamativos.
 
 
+![Captura de pantalla 2023-05-04 a la(s) 23 45 27](https://user-images.githubusercontent.com/113224041/236373725-80e74ba4-a6d3-4d24-bf18-61b20f6d514c.png)
 
