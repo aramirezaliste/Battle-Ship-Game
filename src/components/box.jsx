@@ -16,6 +16,7 @@ export const Box = ({ valor, index, row, shoot, board }) => {
         }
     }
 
+    //Renderizado de un bloque
     return (
         <div className={cambioColor()} onClick={() => { shoot(valor, index, row, board) }}> </div>
     )

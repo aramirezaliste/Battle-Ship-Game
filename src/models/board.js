@@ -1,3 +1,7 @@
+  
+  
+  //Matrices de como estaran los ships en los tableros
+  
   // 0 = empty
   // 1 = part of a ship
   // 2 = a sunken part of a ship

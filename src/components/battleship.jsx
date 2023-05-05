@@ -1,61 +1,48 @@
 import React, { useEffect, useState } from 'react'
 
 import { gameBoard, gameBoardTwo } from '../models/board';
-import { coords } from '../models/numeros';
+import { mixCoords } from '../models/numeros';
 import { Box } from './box';
 
 export const Battleship = () => {
 
 	const [boards, setBoard] = useState([gameBoard, gameBoardTwo])
 
-	// useEffect(() => {
-	//   console.log('Se ha actualizado el componente')
-	// }, [boards])
+	//Contador para obtener las coordenadas de la computadora
+	const [contador, setContador] = useState(0)
+
+	useEffect(() => {
+		console.log('Se ha actualizado el componente')
+	}, [boards])
 
 	//Funcion para que dispare el computador
 	function disparoComputador() {
 
-		//Creando filas y columnas aleatorias
-		let randomFila = Math.floor(Math.random() * 9)
-		let randomIndex = Math.floor(Math.random() * 9)
+		//Coordenadas que ocupara la computadora
+		let fila = mixCoords[contador][0]
+		let index = mixCoords[contador][1]
 
-		// let numberRandom = [randomFila] + [randomIndex]
-
-		// //Validando si se repiten o no
-		// for(let i = 0; i < coords.length; i++){
-		// 	if (coords[i] !== String(numberRandom)) {
-		// 		console.log('Numero no repetido')
-		// 		console.log(coords)
-		// 		coords.push(numberRandom)
-		// 		break
-		// 	}else{
-		// 		console.log('Numero repetido')
-		// 		let otroRandomFila = Math.floor(Math.random() * 9)
-		// 		let otroRandomIndex = Math.floor(Math.random() * 9)
-		// 		numberRandom = [otroRandomFila] + [otroRandomIndex]
-		// 		console.log(coords)
-		// 		coords.push(numberRandom)
-		// 		break
-		// 	}
-		// }
-		
-		//El tablero 0 es el que atacara la computadora
-		//console.log(coords)
-		const boardOne = boards[0]
-		if (boardOne[randomFila][randomIndex] === 1) {
-			const tempBoards = [...boards]
-			tempBoards[0][randomFila][randomIndex] = 2
-			setBoard(tempBoards)
-
-		} else {
-			const tempBoards = [...boards]
-			tempBoards[0][randomFila][randomIndex] = 3
-			setBoard(tempBoards)
-		}
+		setTimeout(() => {
+			//El tablero 0 es el que atacara la computadora
+			//console.log(coords)
+			const boardOne = boards[0]
+			if (boardOne[fila][index] === 1) {
+				const tempBoards = [...boards]
+				tempBoards[0][fila][index] = 2
+				setContador(contador + 1)
+				setBoard(tempBoards)
+			} else {
+				const tempBoards = [...boards]
+				tempBoards[0][fila][index] = 3
+				setContador(contador + 1)
+				setBoard(tempBoards)
+			}
+		}, 500)
 
 	}
 
 	//Funcion que modifica el valor de array, para darle un nuevo estilo
+	//Cuando uno aprieta la casilla a la que va a disparar
 	function disparoTorpedo(valor, index, row, board) {
 		//Disparara en el tablero 1 
 		if (valor === 1) {
